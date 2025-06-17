@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Timer Report</h1>
+
+<!-- Search Panel -->
+<div class="search-panel">
+    <div class="search-title">Search Filters</div>
+    <div class="search-grid">
+        <div class="search-field">
+            <label for="searchUser">User Name</label>
+            <input type="text" id="searchUser" placeholder="Search by user name...">
+        </div>
+        <div class="search-field">
+            <label for="searchProject">Project Name</label>
+            <input type="text" id="searchProject" placeholder="Search by project name...">
+        </div>
+        <div class="search-field">
+            <label for="searchActivity">Activity</label>
+            <input type="text" id="searchActivity" placeholder="Search by activity...">
+        </div>
+        <div class="search-field">
+            <label for="searchTask">Task</label>
+            <input type="text" id="searchTask" placeholder="Search by task...">
+        </div>
+        <div class="search-field">
+            <label for="searchStartDate">Start Date</label>
+            <input type="date" id="searchStartDate">
+        </div>
+        <div class="search-field">
+            <label for="searchEndDate">End Date</label>
+            <input type="date" id="searchEndDate">
+        </div>
+    </div>
+    <div class="search-actions">
+        <button class="btn btn-secondary" onclick="clearFilters()">Clear All</button>
+        <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+    </div>
+</div>
+
+<div id="loadingMessage" class="loading">Loading data...</div>
+<div id="errorMessage" class="error" style="display: none;"></div>
+
+<div id="resultsInfo" class="results-info" style="display: none;"></div>
+
+<table id="reportTable" style="display: none;">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Project Name</th>
+            <th>Activity</th>
+            <th>Task</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody id="reportBody"></tbody>
+</table>
+
+<div id="noResults" class="no-results" style="display: none;">
+    No records match your search criteria. Try adjusting your filters.
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
